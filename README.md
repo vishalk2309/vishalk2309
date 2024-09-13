@@ -24,6 +24,7 @@
 <a href="https://instagram.com/its_official_vishal19" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="its_official_vishal19" height="30" width="40" /></a>
 <a href="https://www.hackerrank.com/btech2021_visha2" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="@btech2021_visha2" height="30" width="40" /></a>
 <a href="https://auth.geeksforgeeks.org/user/kushwahavishal2219" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/geeks-for-geeks.svg" alt="kushwahavishal2219" height="30" width="40" /></a>
+<a href="https://www.naukri.com/code360/profile/VishalKushwaha" target="blank"><img align="center" src="C:\Users\vikku\Downloads\cn.png" alt="VishalKushwaha" height="30" width="40" /></a>
 </p>
 
 <h2 align="left">⚒️ Languages-Frameworks-Tools ⚒️</h2>
