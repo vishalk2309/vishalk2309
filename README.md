@@ -152,15 +152,15 @@ An AI-powered platform exploring LLM integrations, RAG pipelines, and workflow a
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=kushwaha2219&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api?username=vishalk2309&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" height="180"/>
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kushwaha2219&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishalk2309&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="180"/>
 
 </div>
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=kushwaha2219&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=vishalk2309&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 
 </div>
 
@@ -170,7 +170,7 @@ An AI-powered platform exploring LLM integrations, RAG pipelines, and workflow a
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=kushwaha2219&theme=tokyonight&no-frame=true&column=6" alt="GitHub Trophies"/>
+<img src="https://github-profile-trophy.vercel.app/?username=vishalk2309&theme=tokyonight&no-frame=true&column=6" alt="GitHub Trophies"/>
 
 </div>
 
@@ -180,7 +180,7 @@ An AI-powered platform exploring LLM integrations, RAG pipelines, and workflow a
 
 <div align="center">
 
-[![Vishal's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=kushwaha2219&theme=tokyo-night&hide_border=true)](https://github.com/kushwaha2219)
+[![Vishal's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vishalk2309&theme=tokyo-night&hide_border=true)](https://github.com/vishalk2309)
 
 </div>
 
