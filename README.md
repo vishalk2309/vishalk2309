@@ -151,10 +151,9 @@ An AI-powered platform exploring LLM integrations, RAG pipelines, and workflow a
 ## 📊 GitHub Stats
 
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=vishalk2309&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" height="180"/>
+<img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api/top-langs/?username=vishalk2309&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="180"/>
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishalk2309&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="180"/>
+<img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api?username=vishalk2309&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" height="180"/>
 
 </div>
 
