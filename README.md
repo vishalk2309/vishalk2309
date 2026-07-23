@@ -170,7 +170,7 @@ An AI-powered platform exploring LLM integrations, RAG pipelines, and workflow a
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=vishalk2309&theme=tokyonight&no-frame=true&column=6" alt="GitHub Trophies"/>
+<img src="https://github-trophies.vercel.app/?username=vishalk2309&theme=tokyonight&no-frame=true&column=6" alt="GitHub Trophies"/>
 
 </div>
 
