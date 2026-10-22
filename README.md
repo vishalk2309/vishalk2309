@@ -10,7 +10,7 @@
   <img src="./assets/hero.svg" width="100%" alt="Vishal Kushwaha — Software Developer and Generative AI Enthusiast" />
   <br /><br />
   <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/PORTFOLIO-Explore-0B1220?style=for-the-badge&logo=googlechrome&logoColor=5EEAD4" alt="Portfolio" /></a>
-  <a href="YOUR_LINKEDIN_URL"><img src="https://img.shields.io/badge/LINKEDIN-Connect-0B1220?style=for-the-badge&logo=linkedin&logoColor=5EEAD4" alt="LinkedIn" /></a>
+  <a href="[YOUR_LINKEDIN_URL](https://www.linkedin.com/in/vishalkumarkushwaha/)"><img src="https://img.shields.io/badge/LINKEDIN-Connect-0B1220?style=for-the-badge&logo=linkedin&logoColor=5EEAD4" alt="LinkedIn" /></a>
   <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/ENGISYNC-Community-0B1220?style=for-the-badge&logo=githubsponsors&logoColor=5EEAD4" alt="EngiSync" /></a>
 </div>
 
