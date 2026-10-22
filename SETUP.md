@@ -24,6 +24,21 @@ Only the existing portfolio and GitHub URLs are included. Add LinkedIn, email an
 
 The statistics and language cards use `github-readme-stats.vercel.app`; the contribution calendar uses `ghchart.rshah.org`. These third-party services may be cached, unavailable or rate-limited. Each card links to GitHub, and a permanent activity link appears below them. Counts and credentials are not hard-coded into the artwork.
 
-## Reference
+## Share the template with reel viewers
+
+Give viewers `share/github-profile-starter.zip` and `share/GitHub-Profile-Guide.pdf`. The starter has its own `profile.config.json` and generic artwork; it does not include the portrait or project claims from this personal profile. Viewers personalize the configuration and build with Node.js before uploading to their own profile repository.
+
+`share/INSTAGRAM-REEL-KIT.md` contains a reel script, caption, pinned comment, reply text and publishing instructions. Upload the share files to GitHub or another public download location before using those links in your reel.
+
+To rebuild the distributable after changing the source artwork or guide:
+
+```powershell
+node scripts/package-starter.cjs
+Compress-Archive -LiteralPath .preview/github-profile-starter -DestinationPath share/github-profile-starter.zip -Force
+```
+
+The PDF is included when it already exists in `share/`. The editable guide source is `share/GITHUB-PROFILE-GUIDE.md`; `node scripts/build-guide-html.cjs` regenerates its printable HTML version. Use a browser's Print → Save as PDF to export a revised PDF.
+
+## References
 
 GitHub documents [profile READMEs](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme) and recommends [relative paths for repository images](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images). This profile keeps its design assets in the repository using those relative paths.
