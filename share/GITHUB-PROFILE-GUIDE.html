@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GitHub Profile Setup Guide</title><style>
+@page{size:A4;margin:16mm 15mm 18mm}*{box-sizing:border-box}body{margin:0;background:#e9eef5;color:#182334;font:15px/1.6 'Segoe UI',Arial,sans-serif}main{max-width:850px;margin:36px auto;background:white;padding:42px 48px;box-shadow:0 12px 40px #152d4a18}.eyebrow{color:#156bcc;font:700 12px/1.5 Consolas,monospace;letter-spacing:2px;border-top:5px solid #178cff;padding-top:16px}h1{font-size:38px;line-height:1.12;letter-spacing:-1px;margin:20px 0}h2{font-size:23px;line-height:1.3;color:#105eb0;border-top:1px solid #d8e2ef;padding-top:20px;margin-top:30px;break-after:avoid}p{margin:10px 0}a{color:#125fb2;text-decoration:underline;overflow-wrap:anywhere}code{font:12px/1.5 Consolas,'Liberation Mono',monospace;background:#edf3f9;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0c192d;color:#eaf3ff;padding:16px;border-left:4px solid #178cff;border-radius:5px;break-inside:avoid}pre code{background:none;padding:0;color:inherit;font-size:12px}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}th,td{border:1px solid #d6e1ee;padding:9px 11px;text-align:left;vertical-align:top}th{background:#edf3fa;color:#0d559f}tr{break-inside:avoid}li{margin:6px 0}ul,ol{padding-left:24px}.footer{margin-top:32px;padding-top:14px;border-top:2px solid #ff4655;color:#546881;font-size:12px}@media print{body{background:white;font-size:10pt;line-height:1.45}main{max-width:none;margin:0;padding:0;box-shadow:none}h1{font-size:29pt}h2{font-size:16pt;margin-top:20px;padding-top:12px}.page-start{break-before:page}pre{padding:11px}pre code,code{font-size:8.5pt}table{font-size:9pt}th,td{padding:7px}a{color:#105aa8}.eyebrow{font-size:9pt}p,li{orphans:3;widows:3}}
+</style></head><body><main><div class="eyebrow">THE GITHUB PROFILE STARTER / STEP-BY-STEP GUIDE</div><h1>Build your own GitHub profile</h1>
+<p>A practical guide to personalizing the profile design shown in the reel.</p>
+<p><strong>You need:</strong> a GitHub account, a laptop or desktop computer, a text editor such as VS Code, and <a href="https://nodejs.org/en/download">Node.js</a>. Git is optional for the upload method below. You do not need npm packages, paid hosting or an API key.</p>
+<p><strong>Your workflow:</strong> download the starter → edit your details → build the images → upload to your own profile repository.</p>
+<h2>1. Download and extract the starter</h2>
+<p>Download <code>github-profile-starter.zip</code> from the link shared with the reel. Extract it before editing. Open the extracted folder in your editor.</p>
+<p>The folder should contain:</p>
+<pre><code>github-profile-starter/
+├── README.md
+├── START-HERE.md
+├── profile.config.json
+├── assets/
+└── scripts/
+    ├── build-profile.cjs
+    └── render-artwork.cjs</code></pre>
+<p><code>README.md</code> is your generated profile. <code>START-HERE.md</code> is this guide. The <code>assets</code> folder contains the graphics. Change your details in <code>profile.config.json</code>, then rebuild; editing the generated README alone will not change text drawn inside the graphics.</p>
+<h2>2. Add your own details</h2>
+<p>Open <code>profile.config.json</code>. Replace <code>YOUR_USERNAME</code> with your GitHub username, without <code>@</code> or a full URL. For example, if your profile address is <code>https://github.com/riya-dev</code>, your username is <code>riya-dev</code>.</p>
+<p>Change these fields using your real information. This is an example of part of the file; keep the other fields too:</p>
+<pre><code>{
+  &quot;username&quot;: &quot;riya-dev&quot;,
+  &quot;firstName&quot;: &quot;RIYA&quot;,
+  &quot;lastName&quot;: &quot;SHARMA&quot;,
+  &quot;role&quot;: &quot;Frontend Developer&quot;,
+  &quot;focus&quot;: &quot;FRONTEND / WEB / UI&quot;,
+  &quot;status&quot;: &quot;OPEN TO COLLABORATE&quot;,
+  &quot;tagline&quot;: &quot;Building useful, accessible web experiences.&quot;,
+  &quot;summary&quot;: &quot;I build web applications and share what I learn.&quot;,
+  &quot;website&quot;: &quot;https://github.com/riya-dev&quot;,
+  &quot;websiteLabel&quot;: &quot;github.com/riya-dev&quot;
+}</code></pre>
+<p>Use your portfolio URL for <code>website</code>. If you do not have a portfolio, use your own GitHub profile URL. <code>websiteLabel</code> is the short address printed on the contact graphic.</p>
+<p>Keep JSON double quotes and commas in place. Do not add a comma after the last item in an object. Your editor will usually highlight invalid JSON.</p>
+<h2>3. Personalize skills and projects</h2>
+<p>In the same configuration file, edit:</p>
+<table><tr><th>Field</th><th>What it controls</th></tr><tr><td><code>about</code></td><td>Three short focus or introduction entries</td></tr><tr><td><code>toolbelt</code></td><td>Technologies listed below your hero</td></tr><tr><td><code>orbitLabels</code></td><td>Six short labels around the technology orbit</td></tr><tr><td><code>toolbox</code></td><td>Six skill cards: category, name and detail</td></tr><tr><td><code>projects</code></td><td>Two project cards, descriptions, technology tags and optional links</td></tr><tr><td><code>showStats</code></td><td>Optional external GitHub statistics cards; defaults to <code>false</code></td></tr></table>
+<p>Keep <strong>three</strong> <code>about</code> entries, <strong>six</strong> <code>toolbox</code> entries, <strong>six</strong> <code>orbitLabels</code> and <strong>two</strong> projects. The layout is designed for those counts.</p>
+<p>For each project, write two short description lines. Example:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;TASKFLOW&quot;,
+  &quot;subtitle&quot;: &quot;PROJECT MANAGEMENT / IN DEVELOPMENT&quot;,
+  &quot;lines&quot;: [
+    &quot;Building a workspace to manage projects.&quot;,
+    &quot;Organize tasks and collaborate with a team.&quot;
+  ],
+  &quot;tags&quot;: &quot;REACT + YOUR BACKEND&quot;,
+  &quot;url&quot;: &quot;https://github.com/riya-dev/taskflow&quot;
+}</code></pre>
+<p>Use projects and skills that are yours. Mark unfinished projects as in development. Leave <code>url</code> as an empty string if there is no public project link yet; the build will omit that link.</p>
+<p>Keep names, headings and descriptions short. Aim for project names under about 22 characters and each description line under about 42 characters. Check the SVGs after building, especially if you have a long name.</p>
+<h2 class="page-start">4. Add your photo, or keep your initials</h2>
+<p>The starter uses your initials until you add a photo. To use one:</p>
+<ol><li>Put your JPG, JPEG or PNG in <code>assets/</code>. For example: <code>assets/photo.jpg</code>.</li>
+<li>Find its pixel dimensions in the file's image information or properties.</li>
+<li>Update <code>photo</code> in the configuration. This example is for an image that is 1200 pixels wide and 1600 pixels tall:</li>
+</ol>
+<pre><code>&quot;photo&quot;: {
+  &quot;path&quot;: &quot;assets/photo.jpg&quot;,
+  &quot;width&quot;: 1200,
+  &quot;height&quot;: 1600,
+  &quot;crop&quot;: null
+}</code></pre>
+<p>Use the dimensions of your actual image. The photo is embedded into the SVG graphics when you build. Replacing the photo file alone will not update graphics that were already built.</p>
+<p>If the automatic center crop cuts off your face, you can choose a crop using <code>[x, y, width, height]</code> in original image pixels. For the example image above, <code>[0, 0, 1200, 1000]</code> selects the upper part of the photo. Rebuild and preview after changing it.</p>
+<p>To use initials instead, set <code>photo.path</code> to an empty string.</p>
+<h2>5. Build and preview</h2>
+<p>Install Node.js if it is not already installed, then reopen your terminal or editor. Open a terminal <strong>inside the extracted starter folder</strong>, where <code>profile.config.json</code> is located.</p>
+<p>Check that Node.js is available, then build:</p>
+<pre><code>node --version
+node scripts/build-profile.cjs</code></pre>
+<p>The build creates your <code>README.md</code>, desktop and mobile section graphics, and local navigation badges. No <code>npm install</code> is needed.</p>
+<p>Open the files below in a browser to check the artwork:</p>
+<ul><li><code>assets/01-hero.svg</code> and <code>assets/01-hero-mobile.svg</code></li>
+<li><code>assets/04-projects.svg</code> and <code>assets/04-projects-mobile.svg</code></li>
+<li><code>assets/05-connect.svg</code> and <code>assets/05-connect-mobile.svg</code></li>
+</ul>
+<p>Check your name, photo crop, project descriptions, skills and URLs. If text is crowded, shorten it in the config and build again. To change colors or the layout itself, edit <code>scripts/render-artwork.cjs</code>; changing the config is enough for normal personalization.</p>
+<h2 class="page-start">6. Open your GitHub profile repository</h2>
+<p>Your profile repository must be <strong>public</strong> and have <strong>exactly the same name as your GitHub username</strong>. Its root must contain a nonempty <code>README.md</code>. This is how <a href="https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme">GitHub profile READMEs</a> work.</p>
+<p>Example: the account <code>riya-dev</code> needs the repository <code>riya-dev/riya-dev</code>. A repository called <code>my-profile</code> will not appear as that account's profile README.</p>
+<p><strong>If the repository already exists:</strong> open it and continue to the upload step. You do not need another repository or another <code>git init</code>. Save a copy of your current README before replacing it if you want to keep its content.</p>
+<p><strong>If it does not exist:</strong> create a repository on GitHub, enter your exact username as its name, select Public, and initialize it with a README.</p>
+<h2>7. Upload using the GitHub website</h2>
+<p>This is the route that does not require Git commands.</p>
+<ol><li>Open your profile repository on GitHub in a desktop browser.</li>
+<li>Select <strong>Add file → Upload files</strong>.</li>
+<li>From the extracted starter folder, drag in <code>README.md</code>, the entire <code>assets</code> folder, the entire <code>scripts</code> folder and <code>profile.config.json</code>.</li>
+<li>Check that <code>README.md</code> is at the repository root and images are inside <code>assets/</code>. Upload the contents of the starter, not an extra wrapper folder and not the ZIP itself.</li>
+<li>Commit the changes to the repository's default branch.</li>
+<li>Visit <code>https://github.com/YOUR_USERNAME</code>, replacing <code>YOUR_USERNAME</code> with your real username.</li>
+</ol>
+<p>Keep <code>scripts/</code> and <code>profile.config.json</code> in your repository so you can customize it again later. The displayed profile needs the generated README and graphics; the scripts do not run automatically on GitHub.</p>
+<p>GitHub also documents <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository">uploading files from the website</a>.</p>
+<h2 class="page-start">8. Optional: publish using Git</h2>
+<p>If you prefer Git, first create or find your own profile repository as described above. In a terminal, replace the username below and clone that repository into a new folder:</p>
+<pre><code>$githubUser = &quot;YOUR_USERNAME&quot;
+git clone &quot;https://github.com/$githubUser/$githubUser.git&quot; github-profile</code></pre>
+<p>If you already have a clone, use that existing folder instead of cloning again. In File Explorer or Finder, copy the <strong>built</strong> <code>README.md</code>, <code>assets/</code>, <code>scripts/</code> and <code>profile.config.json</code> from your extracted starter into the clone. Allow the updated files to replace their old versions. Keep the clone's existing <code>.git</code> folder.</p>
+<p>Open a terminal inside that clone. Check that the changes and remote are the ones you expect, then commit and push:</p>
+<pre><code>git status
+git remote -v
+git add README.md assets scripts profile.config.json
+git commit -m &quot;Personalize GitHub profile&quot;
+git push</code></pre>
+<p>GitHub may ask you to sign in. Use its supported sign-in flow. If Git asks for a commit identity, configure your own Git name and email before retrying the commit.</p>
+<h2>9. Update it later</h2>
+<p>Edit <code>profile.config.json</code>, run <code>node scripts/build-profile.cjs</code> again, preview the changes, then upload or commit the rebuilt files. Editing generated files directly can be overwritten by the next build.</p>
+<h2 class="page-start">Troubleshooting</h2>
+<table><tr><th>Problem</th><th>What to check</th></tr><tr><td>Profile README does not appear</td><td>Repository is public, name matches your username, and a nonempty <code>README.md</code> is at the root on the default branch.</td></tr><tr><td>Images are broken</td><td>Upload the entire <code>assets/</code> folder with the README. Preserve filenames and capitalization.</td></tr><tr><td>The profile still has placeholder text</td><td>Edit the configuration, rebuild locally and upload the rebuilt files.</td></tr><tr><td>The new photo does not appear</td><td>Check its path and dimensions, rebuild the SVGs and upload the changed artwork.</td></tr><tr><td><code>node</code> is not recognized</td><td>Install Node.js, reopen your terminal, and try <code>node --version</code>.</td></tr><tr><td>A JSON error appears</td><td>Check quotes, commas and brackets in <code>profile.config.json</code>.</td></tr><tr><td>Text overflows a card</td><td>Shorten the name or description and rebuild.</td></tr><tr><td><code>Cannot overwrite ... with itself</code></td><td>Source and destination are the same folder. If you are already in the updated clone, skip copying. Otherwise copy from the extracted starter into the clone.</td></tr><tr><td><code>nothing to commit, working tree clean</code></td><td>Changes may be in the starter folder rather than the clone, or those same files are already committed.</td></tr><tr><td><code>not a git repository</code></td><td>Open the terminal inside your existing clone, where <code>.git</code> is located.</td></tr><tr><td>Push is rejected after remote updates</td><td>Run <code>git pull --rebase</code>, resolve any reported conflicts, then push.</td></tr><tr><td>Optional stats are missing</td><td>Stats use a third-party service and can fail or be cached. Leave <code>showStats</code> false for the built-in GitHub activity link.</td></tr></table>
+<p>Before sharing your finished profile, click every link and check that the name, photo, username, skills and projects all describe you.</p>
+<div class="footer">Personalize your details. Preview your artwork. Publish to your own username/username repository.<br>Official reference links are included in the relevant steps.</div></main></body></html>
