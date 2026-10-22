@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="126" viewBox="0 0 1200 126" role="img" aria-labelledby="title desc">
+<title id="title">GitHub activity</title><desc id="desc">Live GitHub statistics and contribution calendar follow this heading.</desc>
+<defs>
+  <radialGradient id="glow"><stop stop-color="#0767cf" stop-opacity=".4"/><stop offset="1" stop-color="#0767cf" stop-opacity="0"/></radialGradient>
+  <linearGradient id="card" x2="1" y2="1"><stop stop-color="#123a68"/><stop offset="1" stop-color="#0b1729"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1e3655" stroke-width=".7"/></pattern>
+  <style>.body{font-family:'Segoe UI',Arial,sans-serif;font-weight:500}.display{font-family:Impact,'Arial Narrow','Liberation Sans Narrow',sans-serif;font-weight:900;letter-spacing:.2px}.mono{font-family:Consolas,'Liberation Mono',monospace;font-weight:600}</style>
+</defs>
+<rect x="0" y="0" width="1200" height="126" rx="0" fill="#080e1a" stroke="#080e1a"/><rect width="1200" height="126" fill="url(#grid)" opacity=".24"/><text x="32" y="36" class="mono" font-size="16" fill="#9cacc4" letter-spacing="2">04 / BUILDING IN THE OPEN</text><text x="32" y="85" class="display" font-size="44" fill="#f2f5fc" >CODE. COMMIT. KEEP GOING.</text><g transform="translate(1134 38)"><path d="M0 14L7 0H14L7 14ZM10 14L17 0H24L17 14ZM20 14L27 0H34L27 14Z" fill="#ff4655"/></g>
+</svg>
