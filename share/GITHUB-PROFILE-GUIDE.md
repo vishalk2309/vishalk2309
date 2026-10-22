@@ -58,12 +58,12 @@ In the same configuration file, edit:
 | --- | --- |
 | `about` | Three short focus or introduction entries |
 | `toolbelt` | Technologies listed below your hero |
-| `toolLabels` | Six short labels on the technology cards |
+| `orbitLabels` | Six short labels around the technology orbit |
 | `toolbox` | Six skill cards: category, name and detail |
 | `projects` | Two project cards, descriptions, technology tags and optional links |
 | `showStats` | Optional external GitHub statistics cards; defaults to `false` |
 
-Keep **three** `about` entries, **six** `toolbox` entries, **six** `toolLabels` and **two** projects. The layout is designed for those counts. The burgundy design uses serif headings, an arched portrait, and an editorial card layout.
+Keep **three** `about` entries, **six** `toolbox` entries, **six** `orbitLabels` and **two** projects. The layout is designed for those counts.
 
 For each project, write two short description lines. Example:
 

@@ -27,15 +27,17 @@ The statistics and language cards use `github-readme-stats.vercel.app`; the cont
 
 ## Share the template with reel viewers
 
-Give viewers `share/github-profile-starter.zip` and `share/GitHub-Profile-Guide.pdf`. The starter has its own `profile.config.json` and generic artwork; it does not include the portrait or project claims from this personal profile. Viewers personalize the configuration and build with Node.js before uploading to their own profile repository.
+Give viewers `share/github-profile-starter.zip` and `share/GitHub-Profile-Guide.pdf`. These files intentionally preserve the original blue-and-red template shared on LinkedIn and Instagram. The personal profile uses the newer burgundy design. The starter has its own `profile.config.json` and generic artwork; it does not include the portrait or project claims from this personal profile. Viewers personalize the configuration and build with Node.js before uploading to their own profile repository.
 
 `share/INSTAGRAM-REEL-KIT.md` contains a reel script, caption, pinned comment, reply text and publishing instructions. Upload the share files to GitHub or another public download location before using those links in your reel.
 
-To rebuild the distributable after changing the source artwork or guide:
+Keep the published `share/github-profile-starter.zip` unchanged when rebuilding the personal burgundy design. The original ZIP contains its own editable renderer and configuration for maintaining the blue-and-red version.
+
+The current packaging script stages the burgundy renderer. If you build a separate burgundy download later, use a different filename and update its accompanying guide before publishing:
 
 ```powershell
 node scripts/package-starter.cjs
-Compress-Archive -LiteralPath .preview/github-profile-starter -DestinationPath share/github-profile-starter.zip -Force
+Compress-Archive -LiteralPath .preview/github-profile-starter -DestinationPath share/github-profile-burgundy-starter.zip -Force
 ```
 
 The PDF is included when it already exists in `share/`. The editable guide source is `share/GITHUB-PROFILE-GUIDE.md`; `node scripts/build-guide-html.cjs` regenerates its printable HTML version. Use a browser's Print → Save as PDF to export a revised PDF.
