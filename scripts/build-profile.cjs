@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const output = path.join(__dirname, '..', 'assets');
+const portraitData = 'data:image/jpeg;base64,' + fs.readFileSync(path.join(output, 'profile.jpeg')).toString('base64');
 const C = { bg: '#080e1a', panel: '#0d1728', line: '#283c57', ink: '#f2f5fc', muted: '#9cacc4', blue: '#178cff', cyan: '#60cfff', red: '#ff4655' };
 const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const rect = (x,y,w,h,fill=C.panel,stroke=C.line,r=12) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" stroke="${stroke}"/>`;
@@ -12,6 +13,8 @@ const slash = (x,y) => group(x,y,`<path d="M0 14L7 0H14L7 14ZM10 14L17 0H24L17 1
 const label = (x,y,s) => text(x,y,s,16,C.muted,'mono','letter-spacing="2"');
 const heading = (x,y,n,kicker,title) => label(x,y,`${n} / ${kicker}`)+text(x,y+49,title,44,C.ink,'display');
 const pill = (x,y,w,s,color=C.blue) => rect(x,y,w,30,'#10233b',C.line,4)+text(x+12,y+21,s,14,color,'mono');
+// Embed the original JPEG so portraits also render when the SVG is used as an image.
+const portrait = (x,y,w,h) => `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="100 0 850 660" preserveAspectRatio="xMidYMid slice" overflow="hidden"><image href="${portraitData}" x="0" y="0" width="1086" height="1448"/></svg>`+rect(x,y,w,h,'none','#315883',0);
 const svg = (w,h,title,desc,body) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">
 <title id="title">${esc(title)}</title><desc id="desc">${esc(desc)}</desc>
 <defs>
@@ -24,7 +27,7 @@ ${rect(0,0,w,h,C.bg,C.bg,0)}<rect width="${w}" height="${h}" fill="url(#grid)" o
 </svg>\n`;
 function identity(x,y,w=320,h=330) {
   let barcode=''; for(let i=0;i<68;i++) barcode+=rect(22+i*4,h-45,(i%3===0?3:1),22,C.muted,'none',0);
-  return group(x,y,rect(0,0,w,h,'url(#card)','#3f6897',12)+rect(0,0,w,5,C.red,'none',0)+label(22,34,'VK / DEVELOPER PASS')+slash(w-52,20)+rect(22,53,w-44,h-158,'#091425','#315883',6)+`<circle cx="${w/2}" cy="${(h-158)/2+53}" r="62" fill="#0e2e53" stroke="#178cff"/><circle cx="${w/2}" cy="${(h-158)/2+53}" r="76" fill="none" stroke="#225486" stroke-dasharray="3 9"/>`+text(w/2,(h-158)/2+78,'VK',76,C.ink,'display','text-anchor="middle"')+text(22,h-78,'VISHAL KUSHWAHA',27,C.ink,'display')+text(22,h-58,'BACKEND / WEB / AI',13,C.cyan,'mono')+barcode);
+  return group(x,y,rect(0,0,w,h,'url(#card)','#3f6897',12)+rect(0,0,w,5,C.red,'none',0)+label(22,34,'VK / DEVELOPER PASS')+slash(w-52,20)+portrait(22,53,w-44,h-158)+text(22,h-78,'VISHAL KUSHWAHA',27,C.ink,'display')+text(22,h-58,'BACKEND / WEB / AI',13,C.cyan,'mono')+barcode);
 }
 function hero(m) {
   const w=m?600:1200,h=m?790:548;
@@ -39,7 +42,7 @@ function hero(m) {
   b+=text(32,456,'Building useful products. Exploring what’s next.',m?18:21,C.muted);
   if(m) {
     b+=rect(32,490,536,214,'url(#card)','#315883',8)+label(54,521,'DEVELOPER / BUILDER / EXPLORER');
-    b+=text(58,631,'VK',94,C.ink,'display')+text(230,570,'> developer.status',19,C.cyan,'mono')+text(230,608,'creating',23,C.ink,'mono')+text(230,642,'learning + sharing',20,C.muted,'mono')+slash(514,669);
+    b+=portrait(54,539,154,142)+text(230,570,'> developer.status',19,C.cyan,'mono')+text(230,608,'creating',23,C.ink,'mono')+text(230,642,'learning + sharing',20,C.muted,'mono')+slash(514,669);
   } else {
     b+=`<g transform="rotate(4 1004 270)">${identity(831,98,326,354)}</g>`;
     b+=pill(842,474,314,'> curiosity.into(impact)',C.cyan);
@@ -52,9 +55,9 @@ function vision(m) {
   let b=heading(32,40,'01','FROM CURIOSITY TO CREATION','IDEAS INTO IMPACT.');
   const left=rect(0,0,cw,356,C.panel,'#315883')+rect(0,0,cw,5,C.blue,'none',0)+label(24,40,'THE BUILDER’S MINDSET')+text(24,86,'THINK. BUILD. IMPROVE.',36,C.ink,'display')+rect(24,110,cw-48,199,'#081321','#244467',6)+rect(24,110,cw-48,29,'#153151','#244467',6)+`<circle cx="40" cy="125" r="4" fill="${C.red}"/><circle cx="54" cy="125" r="4" fill="#e8b15b"/><circle cx="68" cy="125" r="4" fill="#5bcfa0"/>`+text(88,129,'vishal / workspace',13,C.muted,'mono')+text(44,169,'> turn_curiosity_into_impact()',18,C.cyan,'mono')+pill(44,192,120,'01 / LEARN')+pill(192,192,120,'02 / BUILD')+pill(340,192,142,'03 / SHARE',C.red)+text(44,256,'Reliable APIs. Thoughtful interfaces.',18,C.ink)+text(44,285,'Experiments that become useful software.',17,C.muted)+text(24,339,'// Always a work in progress.',16,C.muted,'mono');
   let right=rect(0,0,cw,356,C.panel,'#64404f')+rect(0,0,cw,5,C.red,'none',0)+label(24,40,'MORE THAN JUST CODE')+text(24,86,'ENGINEERING + COMMUNITY',m?32:34,C.ink,'display');
-  [['01','BACKEND & WEB','Java, Spring Boot, React and REST APIs.'],['02','AI & COMPUTER VISION','Exploring Python and image enhancement.'],['03','ENGISYNC','Sharing resources, learning and opportunity.']].forEach((row,i)=>{let y=130+i*73;right+=text(24,y+13,row[0],31,i===2?C.red:C.blue,'display')+text(80,y+7,row[1],21,C.ink,'display')+text(80,y+33,row[2],17,C.muted);if(i<2)right+=line(80,y+47,cw-24,y+47);});
+  [['01','BACKEND & WEB','Java, Spring Boot, React and REST APIs.'],['02','AI WORKHUB','Building tools for project collaboration.'],['03','ENGISYNC','Sharing resources, learning and opportunity.']].forEach((row,i)=>{let y=130+i*73;right+=text(24,y+13,row[0],31,i===2?C.red:C.blue,'display')+text(80,y+7,row[1],21,C.ink,'display')+text(80,y+33,row[2],17,C.muted);if(i<2)right+=line(80,y+47,cw-24,y+47);});
   b+=group(32,124,left)+group(m?32:610,m?502:124,right);
-  return svg(w,h,'Ideas into impact','Backend and web engineering, AI and computer vision, and EngiSync community resources.',b);
+  return svg(w,h,'Ideas into impact','Backend and web engineering, AI Workhub project collaboration, and EngiSync community resources.',b);
 }
 function stack(m) {
   const w=m?600:1200,h=m?890:534;
@@ -67,18 +70,18 @@ function stack(m) {
   b+=`<path d="M${ox-146} ${oy+51}L${ox+6} ${oy-143}L${ox+148} ${oy+58}L${ox-105} ${oy-111}L${ox-49} ${oy+157}Z" fill="none" stroke="#1765ad" opacity=".7"/>`;
   [[-105,-111,'JAVA'],[6,-143,'JS'],[148,58,'PY'],[-49,157,'SQL'],[-146,51,'GIT'],[144,-99,'AI']].forEach(([x,y,s],i)=>{b+=`<circle cx="${ox+x}" cy="${oy+y}" r="26" fill="#102a47" stroke="${i%2?C.red:C.blue}"/>`+text(ox+x,oy+y+6,s,16,C.ink,'mono','text-anchor="middle"');});
   b+=`<path d="M${ox} ${oy-60}L${ox+53} ${oy-30}V${oy+30}L${ox} ${oy+60}L${ox-53} ${oy+30}V${oy-30}Z" fill="#106ed0" stroke="#4fb4ff" stroke-width="2"/>`+text(ox,oy+14,'VK',44,C.ink,'display','text-anchor="middle"');
-  const cards=[['01 / BACKEND','Java','Spring Boot · REST APIs'],['02 / FRONTEND','JavaScript','React · HTML · CSS'],['03 / DATA','Python','SQL · Computer vision'],['04 / WORKFLOW','Git & GitHub','Version control'],['05 / PLATFORM','Supabase','Application backend'],['06 / EXPLORING','Generative AI','Learn · Build · Iterate']];
+  const cards=[['01 / BACKEND','Java','Spring Boot · REST APIs'],['02 / FRONTEND','JavaScript','React · HTML · CSS'],['03 / DATA','Python','SQL'],['04 / WORKFLOW','Git & GitHub','Version control'],['05 / PLATFORM','Supabase','Application backend'],['06 / EXPLORING','Generative AI','Learn · Build · Iterate']];
   cards.forEach(([k,t,d],i)=>{const x=m?32+(i%2)*276:505+(i%2)*337;const y=(m?565:145)+Math.floor(i/2)*100;const cw=m?260:321;b+=rect(x,y,cw,85,'url(#card)',C.line,6)+label(x+16,y+23,k)+text(x+16,y+49,t,24,C.ink,'display')+text(x+16,y+72,d,m?15:17,C.muted);});
   if(!m)b+=text(505,486,'BUILD / REFINE / CREATE / REPEAT',16,C.cyan,'mono','letter-spacing="2"');
-  return svg(w,h,'My technology toolbox','Java, Spring Boot, REST APIs, JavaScript, React, HTML, CSS, Python, SQL, computer vision, Git, GitHub, Supabase and generative AI.',b);
+  return svg(w,h,'My technology toolbox','Java, Spring Boot, REST APIs, JavaScript, React, HTML, CSS, Python, SQL, Git, GitHub, Supabase and generative AI.',b);
 }
 function projects(m) {
   const w=m?600:1200,h=m?740:440,cw=m?536:558;
   let b=heading(32,40,'03','SELECTED WORK','REAL PROJECTS. REAL LEARNING.');
   const card=(n,title,subtitle,lines,tags,color)=>rect(0,0,cw,286,C.panel,C.line)+rect(0,0,5,286,color,'none',0)+label(25,35,`${n} / PROJECT FILE`)+text(25,81,title,title==='ENGISYNC'?43:33,C.ink,'display')+text(25,111,subtitle,18,color)+line(25,132,cw-25,132)+text(25,171,lines[0],20,C.ink)+text(25,202,lines[1],20,C.ink)+pill(25,231,cw-50,tags,color)+slash(cw-60,22);
   b+=group(32,124,card('01','ENGISYNC','RESOURCES / CAREERS / COMMUNITY',['A place for practical tech learning,','developer resources and job discovery.'],'COMMUNITY + WEB',C.blue));
-  b+=group(m?32:610,m?432:124,card('02','LOW-LIGHT ENHANCEMENT','COMPUTER VISION / ACADEMIC PROJECT',['Exploring image enhancement','in challenging lighting conditions.'],'PYTHON + AI / ML + VISION',C.red));
-  return svg(w,h,'Selected projects: EngiSync and Low-light Enhancement','EngiSync shares learning resources and job opportunities. Low-light Enhancement is an academic computer vision project.',b);
+  b+=group(m?32:610,m?432:124,card('02','AI WORKHUB','PROJECT MANAGEMENT / IN DEVELOPMENT',['Building a Jira-inspired workspace','for real-time project collaboration.'],'PROJECTS + TEAM COLLABORATION',C.red));
+  return svg(w,h,'Selected projects: EngiSync and AI Workhub','EngiSync shares learning resources and job opportunities. AI Workhub is a Jira-inspired project-management workspace currently in development for real-time collaboration.',b);
 }
 function activity(m) {
   const w=m?600:1200;
@@ -96,4 +99,9 @@ fs.mkdirSync(output,{recursive:true});
 for(const [name,render] of Object.entries({'01-hero':hero,'02-vision':vision,'03-stack':stack,'04-projects':projects,'05-connect':connect,'06-activity':activity})) {
   for(const mobile of [false,true])fs.writeFileSync(path.join(output,`${name}${mobile?'-mobile':''}.svg`),render(mobile));
 }
-console.log('Built 12 desktop and mobile profile graphics.');
+for (const [name,title,color] of [['portfolio','VISIT PORTFOLIO',C.cyan],['repositories','EXPLORE REPOSITORIES',C.blue],['github','CONNECT ON GITHUB',C.red]]) {
+  const width = name === 'repositories' ? 286 : 256;
+  const badge = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="44" viewBox="0 0 ${width} 44" role="img" aria-label="${title}"><title>${title}</title>${rect(1,1,width-2,42,'#10233b',C.line,6)}<path d="M13 14L7 22L13 30M27 14L33 22L27 30" fill="none" stroke="${color}" stroke-width="2"/>${text(44,27,title,15,C.ink,'mono','font-family="Consolas,monospace" font-weight="700"')}${rect(width-8,8,3,28,color,'none',1)}</svg>\n`;
+  fs.writeFileSync(path.join(output,`badge-${name}.svg`),badge);
+}
+console.log('Built 12 desktop/mobile profile graphics and 3 local navigation badges.');

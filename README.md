@@ -9,24 +9,24 @@
 <p align="center">
   <strong>Building practical software at the intersection of backend engineering, web and AI.</strong>
   <br /><br />
-  <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/PORTFOLIO-Visit-10233B?style=for-the-badge&amp;logo=googlechrome&amp;logoColor=60CFFF" alt="Visit my portfolio" /></a>
-  <a href="https://github.com/vishalk2309?tab=repositories"><img src="https://img.shields.io/badge/REPOSITORIES-Explore-10233B?style=for-the-badge&amp;logo=github&amp;logoColor=178CFF" alt="Explore my repositories" /></a>
-  <a href="https://github.com/vishalk2309"><img src="https://img.shields.io/badge/GITHUB-Let's_connect-10233B?style=for-the-badge&amp;logo=github&amp;logoColor=FF4655" alt="Connect on GitHub" /></a>
+  <a href="https://www.vishalworks.co.in/"><img src="./assets/badge-portfolio.svg" height="36" alt="Visit my portfolio" /></a>
+  <a href="https://github.com/vishalk2309?tab=repositories"><img src="./assets/badge-repositories.svg" height="36" alt="Explore my repositories" /></a>
+  <a href="https://github.com/vishalk2309"><img src="./assets/badge-github.svg" height="36" alt="Connect on GitHub" /></a>
 </p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/02-vision-mobile.svg" />
-  <img src="./assets/02-vision.svg" width="100%" alt="Ideas into impact: building backend and web applications, exploring AI and computer vision, and sharing learning resources through EngiSync." />
+  <img src="./assets/02-vision.svg" width="100%" alt="Ideas into impact: building backend and web applications, developing AI Workhub for project collaboration, and sharing learning resources through EngiSync." />
 </picture>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/03-stack-mobile.svg" />
-  <img src="./assets/03-stack.svg" width="100%" alt="My toolbox: Java, Spring Boot, REST APIs, JavaScript, React, HTML, CSS, Python, SQL, computer vision, Git, GitHub, Supabase and generative AI." />
+  <img src="./assets/03-stack.svg" width="100%" alt="My toolbox: Java, Spring Boot, REST APIs, JavaScript, React, HTML, CSS, Python, SQL, Git, GitHub, Supabase and generative AI." />
 </picture>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/04-projects-mobile.svg" />
-  <img src="./assets/04-projects.svg" width="100%" alt="Selected work. EngiSync: practical technology resources, careers and community. Low-light Enhancement: an academic computer vision project exploring image enhancement in challenging lighting conditions." />
+  <img src="./assets/04-projects.svg" width="100%" alt="Selected work. EngiSync: practical technology resources, careers and community. AI Workhub: a Jira-inspired project-management workspace in development for real-time collaboration." />
 </picture>
 
 <p align="center">
