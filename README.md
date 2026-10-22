@@ -1,95 +1,35 @@
-<!--
-  PERSONALIZE FIRST:
-  Replace vishalk2309 with your GitHub username.
-  Replace YOUR_LINKEDIN_URL with your actual LinkedIn profile URL.
-  Replace YOUR_EMAIL with your public contact email, or remove the email link.
-  Set profile repository to exactly vishalk2309/vishalk2309.
--->
-
+<!-- GitHub profile repository: github.com/vishalk2309/vishalk2309 -->
 <div align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Vishal Kushwaha — Software Developer and Generative AI Enthusiast" />
-  <br /><br />
-  <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/PORTFOLIO-Explore-0B1220?style=for-the-badge&logo=googlechrome&logoColor=5EEAD4" alt="Portfolio" /></a>
-  <a href="[YOUR_LINKEDIN_URL](https://www.linkedin.com/in/vishalkumarkushwaha/)"><img src="https://img.shields.io/badge/LINKEDIN-Connect-0B1220?style=for-the-badge&logo=linkedin&logoColor=5EEAD4" alt="LinkedIn" /></a>
-  <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/ENGISYNC-Community-0B1220?style=for-the-badge&logo=githubsponsors&logoColor=5EEAD4" alt="EngiSync" /></a>
+  <img src="./assets/01-hero.svg" width="100%" alt="Vishal Kushwaha — Software Developer" />
 </div>
 
-<br />
-
-### `> whoami`
-
-I'm **Vishal Kushwaha**, a **Software Developer** interested in building useful products at the intersection of **backend engineering, AI/ML, and developer experience**. I enjoy turning ideas into reliable applications and sharing practical technology and career resources through **EngiSync**.
-
-```yaml
-profile:
-  role: Software Developer
-  interests: [Backend Engineering, Generative AI, Computer Vision]
-  building: [Practical Web Applications, EngiSync]
-  approach: "Learn deeply. Build thoughtfully. Share openly."
-```
-
-### `> tech --stack`
+<p align="center">
+  <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/PORTFOLIO-Visit-101B2D?style=for-the-badge&logo=googlechrome&logoColor=4DE1D1" alt="Portfolio" /></a>
+  <a href="https://github.com/vishalk2309?tab=repositories"><img src="https://img.shields.io/badge/REPOSITORIES-Explore-101B2D?style=for-the-badge&logo=github&logoColor=55A6FF" alt="Repositories" /></a>
+  <a href="https://www.vishalworks.co.in/"><img src="https://img.shields.io/badge/ENGISYNC-Resources-101B2D?style=for-the-badge&logo=bookstack&logoColor=9B83FF" alt="EngiSync resources" /></a>
+</p>
 
 <div align="center">
-  <img src="./assets/stack.svg" width="100%" alt="Tech focus: Java, Spring Boot, JavaScript, React, Python, SQL, Git and AI/ML" />
+  <img src="./assets/02-vision.svg" width="100%" alt="What I build: developer engineering, AI and community" />
+  <img src="./assets/03-stack.svg" width="100%" alt="Tech toolbox: Java, Spring Boot, JavaScript, React, Python, SQL, Git and AI" />
+  <img src="./assets/04-projects.svg" width="100%" alt="Selected work: EngiSync and low-light image enhancement" />
 </div>
 
-**Backend & databases** · Java · Spring Boot · SQL · REST APIs · Supabase  
-**Frontend & tooling** · JavaScript · React · Git · GitHub  
-**AI interests** · Python · Machine Learning · Computer Vision · Generative AI
+### `// OPEN SOURCE ACTIVITY`
 
-### `> projects --featured`
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=vishalk2309&show_icons=true&hide_border=true&bg_color=101B2D&title_color=4DE1D1&text_color=ECF4FF&icon_color=55A6FF" width="49%" alt="GitHub statistics" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishalk2309&layout=compact&hide_border=true&bg_color=101B2D&title_color=4DE1D1&text_color=ECF4FF" width="49%" alt="Top languages" />
+</p>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**🌙 Low-Light Image Enhancement**  
-Computer vision / AI/ML project focused on improving images captured in challenging lighting conditions.
-
-`Computer Vision` `Python` `AI/ML`
-
-</td>
-<td width="50%" valign="top">
-
-**🚀 EngiSync**  
-A growing developer and career-resource initiative sharing technical notes, practice material, and genuine job opportunities.
-
-`Learning Resources` `Developer Community` `Web`
-
-[Visit resources →](https://www.vishalworks.co.in/)
-
-</td>
-</tr>
-</table>
-
-> **Customize this section:** Replace the project descriptions with repository links once your public repos are ready. Don't add repo URLs until verified.
-
-### `> github --insights`
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vishalk2309&bg_color=101B2D&color=ECF4FF&line=4DE1D1&point=55A6FF&area=true&hide_border=true" width="98%" alt="Contribution activity graph" />
+</p>
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=vishalk2309&show_icons=true&hide_border=true&bg_color=0B1220&title_color=5EEAD4&text_color=CED6E0&icon_color=A78BFA&ring_color=5EEAD4" alt="GitHub statistics" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishalk2309&layout=compact&hide_border=true&bg_color=0B1220&title_color=5EEAD4&text_color=CED6E0" alt="Most used languages" />
+  <img src="./assets/05-connect.svg" width="100%" alt="Let's build something great" />
+  <br />
+  <a href="https://www.vishalworks.co.in/">Portfolio</a> · <a href="https://github.com/vishalk2309">GitHub</a>
 </div>
 
-<div align="center">
-  <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=vishalk2309&bg_color=0B1220&color=CED6E0&line=5EEAD4&point=A78BFA&area=true&hide_border=true" alt="GitHub contribution activity graph" />
-</div>
-
-<sub>Stats are generated by community services and can occasionally be temporarily unavailable. GitHub's native contribution graph remains available on your profile.</sub>
-
-### `> now --building`
-
-- Building maintainable backend and web applications.
-- Exploring practical use cases of Generative AI.
-- Publishing developer resources and job opportunities through EngiSync.
-
-### `> connect --with-me`
-
-<div align="center">
-  <img src="./assets/footer.svg" width="100%" alt="Let's build something meaningful" />
-  <br /><br />
-  <a href="https://www.vishalworks.co.in/">Portfolio</a> ·
-  <a href="YOUR_LINKEDIN_URL">LinkedIn</a> ·
-  <a href="mailto:YOUR_EMAIL">Email</a>
-</div>
+<!-- Optional: Add a verified LinkedIn URL, email and project repository links. -->
