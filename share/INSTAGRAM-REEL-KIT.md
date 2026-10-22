@@ -58,7 +58,7 @@ Use the “link in bio” line only after adding a working download link. If you
 
 Make your GitHub profile your own.
 
-This starter includes a bold hero, your photo, project cards, a technology section and mobile layouts.
+This starter includes a burgundy editorial hero, your photo in an arch, serif headings, project cards, a technology section and mobile layouts.
 
 1. Download and extract the starter.
 2. Edit your details in profile.config.json.

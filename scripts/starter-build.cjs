@@ -4,6 +4,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname,'..');
 const cfg = JSON.parse(fs.readFileSync(path.join(root,'profile.config.json'),'utf8'));
 const preview = process.argv.includes('--preview');
+cfg.toolLabels = cfg.toolLabels || cfg.orbitLabels;
 if (!preview && (!/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(cfg.username) || cfg.username==='YOUR_USERNAME')) {
   throw Error('Set username in profile.config.json to your real GitHub username, then run this command again.');
 }
@@ -11,7 +12,7 @@ for(const key of ['firstName','lastName','role','focus','status','tagline','summ
   if(typeof cfg[key]!=='string'||!cfg[key].trim())throw Error('Fill in '+key+' in profile.config.json.');
 }
 if(!/^https?:\/\//i.test(cfg.website))throw Error('website must start with https:// or http://.');
-if(cfg.about.length!==3||cfg.toolbox.length!==6||cfg.orbitLabels.length!==6||cfg.projects.length!==2)throw Error('Keep 3 about entries, 6 toolbox entries, 6 orbit labels and 2 project entries.');
+if(cfg.about.length!==3||cfg.toolbox.length!==6||!cfg.toolLabels||cfg.toolLabels.length!==6||cfg.projects.length!==2)throw Error('Keep 3 about entries, 6 toolbox entries, 6 tool labels and 2 project entries.');
 for(const p of cfg.projects){if(p.lines.length!==2)throw Error('Each project needs exactly two description lines.');if(p.url&&!/^https?:\/\//i.test(p.url))throw Error('Project URLs must start with https:// or http://.');}
 if(cfg.photo.path){
   if(!/\.(jpe?g|png)$/i.test(cfg.photo.path))throw Error('Use a JPG, JPEG or PNG portrait.');
@@ -32,13 +33,15 @@ readme+=section('03-stack',cfg.toolbox.map(t=>t.name+': '+t.detail).join('. '))+
 readme+=section('04-projects',cfg.projects.map(p=>p.name+': '+p.lines.join(' ')).join('. '))+'\n\n';
 const projectLinks=cfg.projects.filter(p=>p.url).map(p=>`<a href="${esc(p.url)}">${esc(p.name)} ↗</a>`);
 if(projectLinks.length)readme+='<p align="center">'+projectLinks.join(' · ')+'</p>\n\n';
-readme+=section('06-activity','Building in the open: GitHub activity')+'\n\n';
+readme+=section('06-activity','The commit journal: GitHub activity')+'\n\n';
 if(cfg.showStats&&!preview){
-  const style='&amp;hide_border=true&amp;bg_color=0D1728&amp;title_color=178CFF&amp;text_color=F2F5FC';
+  const style='&amp;hide_border=false&amp;border_color=55323E&amp;bg_color=1C1219&amp;title_color=E2A5B3&amp;text_color=F5EADE&amp;icon_color=D1AD7C';
   readme+=`<p align="center">\n<a href="${github}"><img src="https://github-readme-stats.vercel.app/api?username=${cfg.username}&amp;show_icons=true${style}" width="49%" alt="GitHub statistics" /></a>\n<a href="${github}"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${cfg.username}&amp;layout=compact${style}" width="49%" alt="Most-used public-repository languages" /></a>\n</p>\n\n`;
 }
+if(cfg.showCalendar&&!preview)readme+=`<p align="center"><a href="${github}"><img src="https://ghchart.rshah.org/bb7187/${cfg.username}" width="98%" alt="GitHub contribution calendar for ${esc(cfg.firstName+' '+cfg.lastName)}" /></a></p>\n\n`;
+if(cfg.showStats||cfg.showCalendar)readme+='<p align="center"><sub>Live cards use third-party services and may be cached or unavailable.</sub></p>\n\n';
 readme+=`<p align="center"><a href="${github}">View my repositories and contributions on GitHub ↗</a></p>\n\n`;
 readme+=`<a href="${esc(cfg.website)}">\n${section('05-connect','Visit '+cfg.firstName+' '+cfg.lastName+'’s portfolio')}\n</a>\n\n`;
-readme+='<p align="center"><sub>Built with curiosity.</sub></p>\n';
+readme+='<p align="center"><sub>A little code. A lot of curiosity.</sub></p>\n';
 fs.writeFileSync(path.join(root,'README.md'),readme);
 console.log('Generated README.md and all profile artwork. Upload README.md, assets/, scripts/ and profile.config.json to your profile repository.');
